@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-dorado: #caa056;
+  --color-negro: #131514;
+  --color-rojo-vino: #832324;
+  --color-fondo-1: #fffdfe;
+  --color-fondo-2: #f6f5f3;
+  --color-fondo-3: #efeeea;
+  --color-fondo-4: #deddd9;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-dorado: var(--color-dorado);
+  --color-negro: var(--color-negro);
+  --color-rojo-vino: var(--color-rojo-vino);
+  --color-fondo-1: var(--color-fondo-1);
+  --color-fondo-2: var(--color-fondo-2);
+  --color-fondo-3: var(--color-fondo-3);
+  --color-fondo-4: var(--color-fondo-4);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, var(--color-fondo-1) 0%, var(--color-fondo-2) 25%, var(--color-fondo-3) 50%, var(--color-fondo-4) 100%);
+  color: var(--color-negro);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+/* Ocultar scrollbar del carrusel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
