@@ -4,10 +4,10 @@
   --color-dorado: #caa056;
   --color-negro: #131514;
   --color-rojo-vino: #832324;
-  --color-fondo-1: #fffdfe;
-  --color-fondo-2: #f6f5f3;
-  --color-fondo-3: #efeeea;
-  --color-fondo-4: #deddd9;
+  --color-fondo-1: #b81414;
+  --color-fondo-2: #b81414;
+  --color-fondo-3: #b81414;
+  --color-fondo-4: #b81414;
 }
 
 @theme inline {
@@ -21,7 +21,7 @@
 }
 
 body {
-  background: linear-gradient(180deg, var(--color-fondo-1) 0%, var(--color-fondo-2) 25%, var(--color-fondo-3) 50%, var(--color-fondo-4) 100%);
+  background: #b81414;
   color: var(--color-negro);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100vh;
@@ -35,4 +35,54 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@keyframes logoFlip3d {
+  0% {
+    transform: perspective(900px) rotateY(0deg);
+  }
+  20% {
+    transform: perspective(900px) rotateY(-360deg);
+  }
+  100% {
+    transform: perspective(900px) rotateY(-360deg);
+  }
+}
+
+.logo-rotate {
+  perspective: 900px;
+}
+
+.logo-coin {
+  animation: logoFlip3d 2.5s ease-out infinite;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.logo-face {
+  backface-visibility: hidden;
+  transform-origin: center center;
+}
+
+.logo-front {
+  transform: rotateY(0deg);
+}
+
+.logo-back {
+  transform: rotateY(180deg);
+}
+
+@keyframes waveLetter {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.wave-letter {
+  display: inline-block;
+  animation: waveLetter 0.9s ease-in-out infinite;
 }
