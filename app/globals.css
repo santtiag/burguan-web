@@ -4,85 +4,20 @@
   --color-dorado: #caa056;
   --color-negro: #131514;
   --color-rojo-vino: #832324;
-  --color-fondo-1: #b81414;
-  --color-fondo-2: #b81414;
-  --color-fondo-3: #b81414;
-  --color-fondo-4: #b81414;
 }
 
 @theme inline {
   --color-dorado: var(--color-dorado);
   --color-negro: var(--color-negro);
   --color-rojo-vino: var(--color-rojo-vino);
-  --color-fondo-1: var(--color-fondo-1);
-  --color-fondo-2: var(--color-fondo-2);
-  --color-fondo-3: var(--color-fondo-3);
-  --color-fondo-4: var(--color-fondo-4);
 }
 
 body {
-  background: #b81414;
   color: var(--color-negro);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Ocultar scrollbar del carrusel */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-@keyframes logoFlip3d {
-  0% {
-    transform: perspective(900px) rotateY(0deg);
-  }
-  20% {
-    transform: perspective(900px) rotateY(-360deg);
-  }
-  100% {
-    transform: perspective(900px) rotateY(-360deg);
-  }
-}
-
-.logo-rotate {
-  perspective: 900px;
-}
-
-.logo-coin {
-  animation: logoFlip3d 2.5s ease-out infinite;
-  transform-style: preserve-3d;
-  transform-origin: center center;
-  will-change: transform;
-}
-
-.logo-face {
-  backface-visibility: hidden;
-  transform-origin: center center;
-}
-
-.logo-front {
-  transform: rotateY(0deg);
-}
-
-.logo-back {
-  transform: rotateY(180deg);
-}
-
-@keyframes waveLetter {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
-.wave-letter {
-  display: inline-block;
-  animation: waveLetter 0.9s ease-in-out infinite;
-}
+/* Scrollbar global oculto */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
